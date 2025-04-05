@@ -1,0 +1,91 @@
+[2025-04-03 19:42:00,291] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.10:5000 - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:00,293] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:00,298] INFO _log() L97    * Restarting with stat - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:03,642] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:03] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:03,663] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:03] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:03,678] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:03] "GET /openapi/ HTTP/1.1" 200 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:03,754] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:03] "GET /openapi/swagger/images/swagger.svg HTTP/1.1" 200 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:04,679] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:04] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:04,702] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:04] "GET /openapi/swagger/css/swagger-ui.css HTTP/1.1" 200 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:04,706] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:04] "GET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1" 200 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:04,722] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:04] "GET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1" 200 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:04,855] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:04] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:42:27,247] ERROR log_exception() L875  Exception on /exercicio [POST] - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py L875 
+Traceback (most recent call last):
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+  File "D:\Projeto API\meu_app_api\app.py", line 33, in add_exercicio
+    exercicio = Exercicio(
+        exercicio=form.exercicio,
+        series=form.series,
+        peso=form.peso
+    )
+  File "<string>", line 4, in __init__
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\sqlalchemy\orm\state.py", line 571, in _initialize_instance
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\sqlalchemy\orm\state.py", line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projeto API\meu_app_api\models\exercicio.py", line 34, in __init__
+    self.repeticoes = repeticoes
+                      ^^^^^^^^^^
+NameError: name 'repeticoes' is not defined. Did you mean: 'self.repeticoes'?
+[2025-04-03 19:42:27,356] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:42:27] "[35m[1mPOST /exercicio HTTP/1.1[0m" 500 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:44:35,667] INFO _log() L97    * Detected change in 'D:\\Projeto API\\meu_app_api\\models\\exercicio.py', reloading - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:44:35,803] INFO _log() L97    * Restarting with stat - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:44:39,025] ERROR log_exception() L875  Exception on /exercicio [POST] - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py L875 
+Traceback (most recent call last):
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Projeto API\meu_app_api\.venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+  File "D:\Projeto API\meu_app_api\app.py", line 33, in add_exercicio
+    exercicio = Exercicio(
+        exercicio=form.exercicio,
+        series=form.series,
+        peso=form.peso
+    )
+TypeError: __init__() missing 1 required positional argument: 'repeticoes'
+[2025-04-03 19:44:39,029] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:44:39] "[35m[1mPOST /exercicio HTTP/1.1[0m" 500 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:45:13,494] INFO _log() L97    * Detected change in 'D:\\Projeto API\\meu_app_api\\app.py', reloading - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:45:13,616] INFO _log() L97    * Restarting with stat - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:45:15,166] ERROR add_exercicio() L56   Erro inesperado ao adicionar 'Desenvolvimento de Ombros': (sqlite3.OperationalError) table exercicio has no column named repeticoes
+[SQL: INSERT INTO exercicio (exercicio, series, peso, repeticoes, data) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Desenvolvimento de Ombros', 3, 20.0, 8, '2025-04-03 19:45:14.386256')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - call_trace=D:\Projeto API\meu_app_api\app.py L56  
+[2025-04-03 19:45:15,168] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:45:15] "[31m[1mPOST /exercicio HTTP/1.1[0m" 400 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:45:40,793] INFO _log() L97    * Detected change in 'D:\\Projeto API\\meu_app_api\\app.py', reloading - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:45:40,905] INFO _log() L97    * Restarting with stat - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2025-04-03 19:45:47,947] ERROR add_exercicio() L56   Erro inesperado ao adicionar 'Desenvolvimento de Ombros': (sqlite3.OperationalError) table exercicio has no column named repeticoes
+[SQL: INSERT INTO exercicio (exercicio, series, peso, repeticoes, data) VALUES (?, ?, ?, ?, ?)]
+[parameters: ('Desenvolvimento de Ombros', 3, 20.0, 8, '2025-04-03 19:45:41.636186')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8) - call_trace=D:\Projeto API\meu_app_api\app.py L56  
+[2025-04-03 19:45:47,949] INFO _log() L97   127.0.0.1 - - [03/Apr/2025 19:45:47] "[31m[1mPOST /exercicio HTTP/1.1[0m" 400 - - call_trace=D:\Projeto API\meu_app_api\.venv\Lib\site-packages\werkzeug\_internal.py L97  
