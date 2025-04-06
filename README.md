@@ -28,7 +28,7 @@ API desenvolvida com Flask para gerenciamento de treinos de academia. Permite ca
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/backend.git
+   git clone (https://github.com/Eduardokwj/back-end_gym_tracker/tree/main/meu_app_api%20(backend))
    cd backend
 
 É recomendado utilizar um ambiente virtual do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
